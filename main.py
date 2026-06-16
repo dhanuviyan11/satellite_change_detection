@@ -4,12 +4,14 @@ from src.preprocessing import to_grayscale, gaussian_blur, equalize
 import matplotlib.pyplot as plt
 import src.change_detector as cd
 from src.config import MIN_CONTOUR_AREA
+from src.alignment import align_images
 
 before_path="data/before/vizhinjam_2018.jpg"
 after_path="data/after/vizhinjam_2025.jpg"
 
 before=load_image(before_path)
 after=load_image(after_path)
+after=align_images(before, after)
 
 if before.shape != after.shape:
     raise ValueError("The two images must have the same dimensions")
