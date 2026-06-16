@@ -12,6 +12,24 @@ A computer vision project that detects and quantifies changes between satellite 
 * Change Area Estimation
 * Configurable Detection Parameters
 
+Version 2.0 Updates
+ORB Feature-Based Image Alignment
+The project now includes an experimental image registration module using ORB (Oriented FAST and Rotated BRIEF) feature detection and homography estimation.
+Updated pipeline
+Satellite Images
+↓
+ORB Feature Detection
+↓
+Feature Matching
+↓
+Homography Estimation
+↓
+Image Alignment
+↓
+Change Detection
+
+This helps reduce false positives caused by image shifts and viewpoint differences before performing change detection.Note: Alignment performance depends on image quality, scene similarity, and the amount of structural change between acquisition dates.
+
 ## Sample Output
 
 ### Vizhinjam Port Development Analysis
@@ -92,7 +110,6 @@ Observed changes:
 
 ## Future Improvements
 
-* ORB-based Image Alignment
 * Image Registration
 * NDVI Vegetation Analysis
 * FastAPI Dashboard
